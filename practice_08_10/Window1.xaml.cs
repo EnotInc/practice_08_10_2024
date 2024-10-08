@@ -56,9 +56,17 @@ namespace practice_08_10
 
         private void translate(object sender, RoutedEventArgs e)
         {
-            string trWord = word.ToLower();
+            try
+            {
+                string trWord = word.ToLower();
 
-            TrBox.Text = TransWords[trWord];
+                TrBox.Text = TransWords[trWord];
+            }
+            catch
+            {
+                TrBox.Text = "error, invalid value";
+            }
+
         }
     }
 }
