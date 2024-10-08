@@ -26,6 +26,22 @@ namespace practice_08_10
 
         string word = "";
 
+        Dictionary<string, string> TransWords = new Dictionary<string, string>()
+        {
+            { "погода", "weather"},
+            { "шторм", "shtorm"},
+            { "солнечно", "sunny"},
+            { "пасмурно", "cloudy"},
+            { "верет", "wind" },
+            { "штиль", "calm" },
+            { "дождь","rain" },
+            { "гроза","tunder" },
+            { "радуга","rainbow" },
+            { "туман","fog" },
+        };
+        
+
+
         private void GoBack(object sender, RoutedEventArgs e)
         {
             MainWindow a = new MainWindow();
@@ -41,52 +57,8 @@ namespace practice_08_10
         private void translate(object sender, RoutedEventArgs e)
         {
             string trWord = word.ToLower();
-            switch (trWord)
-            {
-                case "погода":
-                    TrBox.Text = "weather";
-                    break;
 
-                case "шторм":
-                    TrBox.Text = "shtorm";
-                    break;
-
-                case "солнечно":
-                    TrBox.Text = "sunny";
-                    break;
-
-                case "пасмурно":
-                    TrBox.Text = "cloudy";
-                    break;
-
-                case "ветер":
-                    TrBox.Text = "wind";
-                    break;
-
-                case "штиль":
-                    TrBox.Text = "calm";
-                    break;
-
-                case "дождь":
-                    TrBox.Text = "rain";
-                    break;
-
-                case "гроза":
-                    TrBox.Text = "tunder";
-                    break;
-
-                case "радуга":
-                    TrBox.Text = "rainbow";
-                    break;
-
-                case "туман":
-                    TrBox.Text = "fog";
-                    break;
-
-                default:
-                    TrBox.Text = "error: invalid value";
-                    break;
-            }
+            TrBox.Text = TransWords[trWord];
         }
     }
 }
