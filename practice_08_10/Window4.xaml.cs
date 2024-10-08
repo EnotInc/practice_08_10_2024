@@ -24,7 +24,7 @@ namespace practice_08_10
             InitializeComponent();
         }
 
-        string password = "admin";
+        const string password = "admin";
         string text;
 
         private void GoBack(object sender, RoutedEventArgs e)
@@ -49,13 +49,14 @@ namespace practice_08_10
 
         private void Enter(object sender, RoutedEventArgs e)
         {
-            if (text == password)
+            switch (text)
             {
-                TextBlokError.Text = "secret message";
-            }
-            else
-            {
-                TextBlokError.Text = "error, incalid value";
+                case password:
+                    TextBlokError.Text = "secret message";
+                    break;
+                default:
+                    TextBlokError.Text = "error, incalid value";
+                    break;
             }
         }
     }
